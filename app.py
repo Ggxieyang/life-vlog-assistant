@@ -53,6 +53,6 @@ demo = gr.Interface(
     title="生活记录小助手"
 )
 
-demo.launch(share=True)  # 记得始终加上 share=True
+demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
 
 
