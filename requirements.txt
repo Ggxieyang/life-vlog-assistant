@@ -1,0 +1,4 @@
+gradio
+ultralytics
+opencv-python-headless
+openai
