@@ -1,5 +1,0 @@
-runs/
-*.pt
-*.avi
-*.mp4
-__pycache__/
