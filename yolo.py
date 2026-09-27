@@ -1,10 +1,10 @@
 import cv2
 
-from ultralytics import YOLO
+from ultralytics import YOLOWorld
 
 # Load the YOLO model
-model = YOLO("yolov8n.pt")
-
+model = YOLOWorld("yolov8s-world.pt")
+model.set_classes(["person"])
 # Open the video file
 video_path = "vlog.mp4"
 results = model.predict(video_path)

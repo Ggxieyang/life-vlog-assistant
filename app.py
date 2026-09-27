@@ -2,15 +2,15 @@ import gradio as gr
 import cv2
 import os
 import glob
-from ultralytics import YOLO
+from ultralytics import YOLOWorld
 from collections import defaultdict
 import json
 
 def analyze_video(video_path):
-    model = YOLO("yolov8n.pt")
-
+    model = YOLOWorld("yolov8s-world.pt")
+    model.set_classes(["person"])
     # Open the video file
-    results = model.predict(video_path,save=True,project="outputs",name="result",exist_ok=True,vid_stride=30)
+    results = model.predict(video_path,save=True,project="outputs",name="result",exist_ok=True,vid_stride=30,stream=True)
 
     # 2. 直接去实际目录里找最新的视频文件，不拼接文件名
     search_dir = "runs/detect/outputs/result"

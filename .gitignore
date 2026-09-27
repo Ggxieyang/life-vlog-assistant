@@ -6,3 +6,4 @@ runs/
 .gradio/
 __pycache__/
 *.jsonl
+weights/
